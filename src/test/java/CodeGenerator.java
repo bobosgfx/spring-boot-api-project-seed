@@ -83,6 +83,9 @@ public class CodeGenerator {
         pluginConfiguration.setConfigurationType("tk.mybatis.mapper.generator.MapperPlugin");
         pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
         context.addPluginConfiguration(pluginConfiguration);
+        // lomboc plugin
+        pluginConfiguration.setConfigurationType("com.company.project.core.LombokPlugin");
+        context.addPluginConfiguration(pluginConfiguration);
         // model config
         JavaModelGeneratorConfiguration javaModelGeneratorConfiguration = new JavaModelGeneratorConfiguration();
         javaModelGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
